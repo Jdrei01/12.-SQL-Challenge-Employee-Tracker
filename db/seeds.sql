@@ -1,18 +1,38 @@
-INSERT INTO department (name)
-VALUES ("Lion King"),
-       ("The Godfather"),
-       ("West Side Story"),
-       ("Parasite"),
-       ("The Wizard of Oz");
+USE employees;
 
-INSERT INTO role (title, salary, department_id)
-VALUES (1, "Zazu is underrated. Give that hornbill a sequel!"),
-       (2, "I'm gonna make him an offer you can't refuse, watch this movie"),
-       (1, "Scar is the lion everyone loves to hate"),
-       (3, "Ten years of ballet and three years of tap to join a gang in this neighborhood"),
-       (5, "The tin man gave a metallic, hollow performance"),
-       (1, "Hakuna matata"),
-       (5, "Those flying monkeys are nightmare fuel!");
+INSERT INTO
+    department (department_name)
+VALUES
+    ('Engineering'),
+    ('Finance'),
+    ('Legal'),
+    ('Sales');
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Lion King"),  
+INSERT INTO
+    role (title, salary, department_id)
+VALUES
+    ('Sales Lead', 100000, 4),
+    ('Salesperson', 80000, 4),
+    ('Lead Engineer', 150000, 1),
+    ('Software Engineer', 120000, 1),
+    ('Account Manager', 160000, 2),
+    ('Accountant', 125000, 2),
+    ('Legal Team Lead', 250000, 3),
+    ('Lawyer', 190000, 3);
+
+INSERT INTO
+    employee (
+        first_name,
+        last_name,
+        role_id,
+        manager_id
+    )
+VALUES
+    ('Rachel', 'Green', 1, null),
+    ('Gunther', 'Centralperk', 2, 1),
+    ('Ross', 'Geller', 3, null),
+    ('Joey', 'Tribbiani', 4, 3),
+    ('Chandler', 'Bing', 5, null),
+    ('Monica', 'Geller', 6, 5),
+    ('Phoebe', 'Buffay', 7, null),
+    ('Mike', 'Hannigan', 8, 7);

@@ -2,8 +2,8 @@ const connection = require('./connection')
 
 // class structure
 class DB {
-    constructor(connections) {
-        this.connection = connections;
+    constructor(connection) {
+        this.connection = connection;
     } 
     findAllDepartments() {
         return this.connection.promise().query("")
