@@ -342,7 +342,7 @@ async function viewEmployeesByDepartment() {
             `
             SELECT
                 d.id AS department_id,
-                d.department_name,
+                d.name ASdepartment_name,
                 e.id AS employee_id,
                 CONCAT(e.first_name, ' ', e.last_name) AS employee_name,
                 r.title AS employee_role
@@ -363,7 +363,7 @@ async function viewEmployeesByDepartment() {
 
         console.table(results);
         startApp();
-    } catch {
+    } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
@@ -438,7 +438,7 @@ async function viewBudget() {
         const result = await db.query(
             `
             SELECT
-                d.department_name AS department,
+                d.department.name AS department,
                 SUM(r.salary) AS total_budget
             FROM
                 department AS d
@@ -456,7 +456,7 @@ async function viewBudget() {
         )
         console.table(result);
         startApp();
-    } catch {
+    } catch (error) {
         console.error('Error fetching data:', error);
     }
 
