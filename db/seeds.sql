@@ -1,26 +1,24 @@
 USE employees;
-
 INSERT INTO
-    department (name)  _-- Corrected column name_
-
+    department (name)  -- Corrected column name
 VALUES
     ('Engineering'),
     ('Finance'),
     ('Legal'),
     ('Sales');
-
+-- Assuming departments are inserted in the order above and get IDs 1, 2, 3, 4 respectively
 INSERT INTO
     role (title, salary, department_id)
 VALUES
-    ('Sales Lead', _100000_, _4_),
-    ('Salesperson', _80000_, _4_),
-    ('Lead Engineer', _150000_, _1_),
-    ('Software Engineer', _120000_, _1_),
-    ('Account Manager', _160000_, _2_),
-    ('Accountant', _125000_, _2_),
-    ('Legal Team Lead', _250000_, _3_),
-    ('Lawyer', _190000_, _3_);
-    
+    ('Sales Lead', 100000, 4),
+    ('Salesperson', 80000, 4),
+    ('Lead Engineer', 150000, 1),
+    ('Software Engineer', 120000, 1),
+    ('Account Manager', 160000, 2),
+    ('Accountant', 125000, 2),
+    ('Legal Team Lead', 250000, 3),
+    ('Lawyer', 190000, 3);
+-- Assuming roles are inserted in the order above and get IDs 1, 2, 3, 4, etc., respectively
 INSERT INTO
     employee (
         first_name,
@@ -29,11 +27,11 @@ INSERT INTO
         manager_id
     )
 VALUES
-    ('Rachel', 'Green', _1_, null),
-    ('Gunther', 'Centralperk', _2_, _1_),
-    ('Ross', 'Geller', _3_, null),
-    ('Joey', 'Tribbiani', _4_, _3_),
-    ('Chandler', 'Bing', _5_, null),
-    ('Monica', 'Geller', _6_, _5_),
-    ('Phoebe', 'Buffay', _7_, null),
-    ('Mike', 'Hannigan', _8_, _7_);
+    ('Rachel', 'Green', 1, null),
+    ('Gunther', 'Centralperk', 2, 1),
+    ('Ross', 'Geller', 3, null),
+    ('Joey', 'Tribbiani', 4, 3),
+    ('Chandler', 'Bing', 5, null),
+    ('Monica', 'Geller', 6, 5),
+    ('Phoebe', 'Buffay', 7, null),
+    ('Mike', 'Hannigan', 8, 7);
