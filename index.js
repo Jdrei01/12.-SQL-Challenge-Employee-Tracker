@@ -237,7 +237,7 @@ async function addDepartment() {
         }
     ])
     await db.query(
-        "insert into department (department_name) values (?)",
+        "insert into department (department.name) values (?)",
         [department_name.department_name]
     );
     console.log("The new Department was successfully added!")
@@ -371,7 +371,7 @@ async function viewEmployeesByDepartment() {
 // this function allows the user to delete departments from the department table
 async function deleteDepartment() {
     const data = await db.query(
-        "SELECT id as value, department_name as name FROM department"
+        "SELECT id as value, department.name as name FROM department"
     );
 
     const results = await prompt([
