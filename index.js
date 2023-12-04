@@ -438,7 +438,7 @@ async function viewBudget() {
         const result = await db.query(
             `
             SELECT
-                d.department.name AS department,
+                d.name AS department_name,
                 SUM(r.salary) AS total_budget
             FROM
                 department AS d
@@ -451,7 +451,7 @@ async function viewBudget() {
             ON
                 r.id = e.role_id
             GROUP BY
-                d.department_name;
+                d.name;
         `
         )
         console.table(result);
